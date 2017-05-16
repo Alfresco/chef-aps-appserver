@@ -8,19 +8,25 @@ provisioner:
   # For example:
   #   always_update_cookbooks: <%= !ENV['CI'] %>
   always_update_cookbooks: true
+  require_chef_omnibus: 12.19.36
 
 verifier:
   name: inspec
 
 platforms:
-  - name: ubuntu-16.04
-  - name: centos-7.3
+  - name: centos-7.2
+    driver_config:
+      network:
+      - ["private_network", {ip: "192.168.33.23"}]
+
+    driver:
+      box_url: http://opscode-vm-bento.s3.amazonaws.com/vagrant/virtualbox/opscode_centos-7.2_chef-provisionerless.box
 
 suites:
   - name: default
     run_list:
       - recipe[chef-aps-appserver::default]
     verifier:
-      inspec_tests:
-        - test/smoke/default
+       inspec_tests:
+        - path: test/inspec/
     attributes:
