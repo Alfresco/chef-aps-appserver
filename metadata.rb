@@ -1,9 +1,9 @@
-name 'chef-aps-appserver'
+name 'aps-appserver'
 maintainer 'Alfresco T&A Team'
 maintainer_email 'devops@alfresco.com'
 license 'Apache 2.0'
-description 'Installs/Configures chef-aps-appserver'
-long_description 'Installs/Configures chef-aps-appserver'
+description 'Installs/Configures aps-appserver'
+long_description 'Installs/Configures aps-appserver'
 version '0.1.0'
 
 # The `issues_url` points to the location where issues for this cookbook are
@@ -18,5 +18,11 @@ issues_url 'https://github.com/Alfresco/chef-aps-appserver/issues'
 #
 source_url 'https://github.com/Alfresco/chef-aps-appserver'
 
-chef_version '~> 12'
+chef_version '~> 12.19.36'
 supports 'centos', '>= 7.0'
+
+depends 'file'
+depends 'apache_tomcat'
+depends 'poise-derived', '~> 1.0.0'
+depends 'commons'
+depends 'alfresco-utils', '~> 1.1.0'
