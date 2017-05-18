@@ -72,4 +72,3 @@ namespace :integration do
 end
 
 task default: [:foodcritic, :knife, :unit, :chefspec, :cookstyle]
-
