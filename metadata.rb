@@ -21,8 +21,6 @@ source_url 'https://github.com/Alfresco/chef-aps-appserver'
 chef_version '~> 12.19.36'
 supports 'centos', '>= 7.0'
 
-depends 'file'
 depends 'apache_tomcat'
 depends 'poise-derived', '~> 1.0.0'
-depends 'commons'
 depends 'alfresco-utils', '~> 1.1.0'
