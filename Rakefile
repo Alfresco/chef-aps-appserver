@@ -5,11 +5,6 @@ require 'foodcritic'
 require 'rspec/core/rake_task'
 require 'cookstyle'
 
-desc 'Runs knife cookbook test'
-task :knife do
-  sh 'bundle exec knife cookbook test cookbook -o ./ -a'
-end
-
 desc 'Runs ChefSpec tests'
 task :chefspec do
   sh 'rspec'
@@ -71,5 +66,5 @@ namespace :integration do
   end
 end
 
-task default: [:foodcritic, :knife, :unit, :chefspec, :cookstyle]
+task default: [:foodcritic, :unit, :chefspec, :cookstyle]
 
