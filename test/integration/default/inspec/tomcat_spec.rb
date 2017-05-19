@@ -98,7 +98,7 @@ control 'aps-01' do
     it { should_not be_readable.by_user('nginx') }
     it { should_not be_writable.by_user('nginx') }
     it { should_not be_executable.by_user('nginx') }
-    its('content') { should match '<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"'}
+    its('content') { should match '<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"' }
   end
 
   describe file('/opt/tomcat/activiti/conf/context.xml') do
@@ -123,7 +123,7 @@ control 'aps-01' do
     it { should_not be_writable.by_user('tomcat') }
     it { should be_readable.by_user('tomcat') }
     it { should_not be_executable.by_user('tomcat') }
-    its('content') { should match 'Environment="CATALINA_HOME=/usr/share/tomcat-8.0.36"'}
-    its('content') { should match '"CATALINA_BASE=/opt/tomcat/activiti" "JAVA_HOME=/usr"'}
+    its('content') { should match 'Environment="CATALINA_HOME=/usr/share/tomcat-8.0.36"' }
+    its('content') { should match '"CATALINA_BASE=/opt/tomcat/activiti" "JAVA_HOME=/usr"' }
   end
 end
