@@ -18,4 +18,3 @@ end
 service name do
   action :stop
 end
-

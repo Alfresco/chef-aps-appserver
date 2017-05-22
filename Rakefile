@@ -1,4 +1,3 @@
-
 # !/usr/bin/env rake
 
 require 'foodcritic'
@@ -67,4 +66,3 @@ namespace :integration do
 end
 
 task default: [:foodcritic, :unit, :chefspec, :cookstyle]
-

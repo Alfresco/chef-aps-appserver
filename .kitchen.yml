@@ -4,9 +4,6 @@ driver:
 
 provisioner:
   name: chef_zero
-  # You may wish to disable always updating cookbooks in CI or other testing environments.
-  # For example:
-  #   always_update_cookbooks: <%= !ENV['CI'] %>
   always_update_cookbooks: true
   require_chef_omnibus: 12.19.36
 verifier:
@@ -19,7 +16,9 @@ suites:
   - name: default
     run_list:
       - recipe[aps-appserver::default]
+      - recipe[alfresco-utils::node_json]
     verifier:
       inspec_tests:
-        - path: test/inspec/
+        - name: chef-aps-inspec-tomcat
+          path: test/
     attributes:

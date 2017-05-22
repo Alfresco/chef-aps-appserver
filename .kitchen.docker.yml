@@ -25,7 +25,9 @@ suites:
   - name: default
     run_list:
       - recipe[aps-appserver::default]
+      - recipe[alfresco-utils::node_json]
     verifier:
-       inspec_tests:
-         - path: test/inspec/
+      inspec_tests:
+        - name: chef-aps-inspec-tomcat
+          path: test/
     attributes:
