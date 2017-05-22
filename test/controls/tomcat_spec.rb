@@ -33,8 +33,9 @@ control 'aps-appserver-04' do
   impact 0.7
   desc 'Checks Tomcat activiti packages folder'
 
-  describe file('/opt/tomcat/activiti') do
+  describe directory('/opt/tomcat/activiti') do
     it { should exist }
+    it { should be_directory }
     its('owner') { should eq username }
     its('group') { should eq groupname }
     it { should be_writable.by_user(username) }
@@ -52,6 +53,7 @@ control 'aps-appserver-05' do
 
   describe file('/opt/tomcat/activiti/bin/setenv.sh') do
     it { should exist }
+    it { should be_file }
     its('owner') { should eq username }
     its('group') { should eq groupname }
     it { should be_writable.by_user(username) }
@@ -68,6 +70,7 @@ control 'aps-appserver-06' do
   desc 'Checks Tomcat activiti packages configuration files'
   describe file('/opt/tomcat/activiti/conf/web.xml') do
     it { should exist }
+    it { should be_file }
     its('owner') { should eq username }
     its('group') { should eq groupname }
     it { should be_writable.by_user(username) }
@@ -81,6 +84,7 @@ control 'aps-appserver-06' do
 
   describe file('/opt/tomcat/activiti/conf/context.xml') do
     it { should exist }
+    it { should be_file }
     its('owner') { should eq username }
     its('group') { should eq groupname }
     it { should be_writable.by_user(username) }
@@ -96,8 +100,9 @@ control 'aps-appserver-07' do
   impact 0.7
   desc 'Checks Tomcat configuration folder'
 
-  describe file('/etc/tomcat') do
+  describe directory('/etc/tomcat') do
     it { should exist }
+    it { should be_directory }
     its('owner') { should eq username }
     its('group') { should eq groupname }
     it { should be_writable.by_user(username) }
@@ -132,8 +137,9 @@ control 'aps-appserver-09' do
   impact 0.7
   desc 'Checks variable log file for tomcat'
 
-  describe file('/var/log/tomcat') do
+  describe directory('/var/log/tomcat') do
     it { should exist }
+    it { should be_directory }
     its('owner') { should eq username }
     its('group') { should eq groupname }
     it { should be_writable.by_user(username) }
@@ -149,8 +155,9 @@ control 'aps-appserver-10' do
   impact 0.7
   desc 'Checks variable lib file for tomcat'
 
-  describe file('/var/lib/tomcat/activiti') do
+  describe directory('/var/lib/tomcat/activiti') do
     it { should exist }
+    it { should be_directory }
     its('owner') { should eq username }
     its('group') { should eq groupname }
     it { should be_writable.by_user(username) }
@@ -166,8 +173,9 @@ control 'aps-appserver-11' do
   impact 0.7
   desc 'Checks variable cache file for tomcat'
 
-  describe file('/var/cache/tomcat/activiti') do
+  describe directory('/var/cache/tomcat/activiti') do
     it { should exist }
+    it { should be_directory }
     its('owner') { should eq username }
     its('group') { should eq groupname }
     it { should be_writable.by_user(username) }

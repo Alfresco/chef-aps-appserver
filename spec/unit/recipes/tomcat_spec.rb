@@ -2,9 +2,6 @@ require 'spec_helper'
 require 'chefspec'
 
 describe 'aps-appserver::tomcat' do
-  before do
-    stub_command('getenforce | grep -i enforcing').and_return(false)
-  end
   let(:chef_run) do
     runner = ChefSpec::ServerRunner.new
     runner.converge(described_recipe)
