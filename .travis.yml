@@ -14,5 +14,5 @@ install: bundle install
 before_script: sudo iptables -L DOCKER || sudo iptables -N DOCKER
 
 script:
-  - chef exec rake default
-  - chef exec rake "integration:docker[$SUITE, test]"
+  - bundle exec rake default
+  - bundle exec rake "integration:docker[$SUITE, test]"
