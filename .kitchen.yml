@@ -20,5 +20,5 @@ suites:
     verifier:
       inspec_tests:
         - name: chef-aps-inspec-tomcat
-          path: test/
+          git: https://github.com/Alfresco/chef-aps-inspec-tomcat
     attributes:
