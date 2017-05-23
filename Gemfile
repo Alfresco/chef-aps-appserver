@@ -9,7 +9,6 @@ gem 'cookstyle', '~> 1.2.0'
 gem 'coveralls', require: false
 gem 'foodcritic', '~> 10.2.0'
 gem 'inspec', '~>1.2.1'
-gem 'public_suffix', '~>2.0.5'
 gem 'rake'
 gem 'rspec', '~> 3.5.0'
 gem 'simplecov', '~> 0.12.0'
