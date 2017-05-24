@@ -4,22 +4,20 @@ require 'foodcritic'
 require 'rspec/core/rake_task'
 require 'cookstyle'
 
+desc 'Runs ChefSpec tests'
+task :chefspec do
+  sh 'chef exec bundle exec rspec'
+end
+
 desc 'Runs foodcritic test'
 task :foodcritic do
   FoodCritic::Rake::LintTask.new
-  sh 'bundle exec foodcritic -f any .'
-end
-
-desc 'Runs rspec tests in test/unit folder'
-task :unit do
-  RSpec::Core::RakeTask.new(:unit) do |t|
-    t.pattern = Dir['spec/*/**/*_spec.rb'].reject { |f| f['/api/v1'] || f['/integration'] }
-  end
+  sh 'chef exec bundle exec foodcritic -f any .'
 end
 
 desc 'Runs cookstyle'
 task :cookstyle do
-  sh 'bundle exec cookstyle'
+  sh 'chef exec bundle exec cookstyle'
 end
 
 desc 'Run Test Kitchen integration tests'
@@ -60,4 +58,4 @@ namespace :integration do
   end
 end
 
-task default: [:foodcritic, :unit, :cookstyle]
+task default: [:foodcritic, :chefspec, :cookstyle]
