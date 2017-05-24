@@ -4,11 +4,6 @@ require 'foodcritic'
 require 'rspec/core/rake_task'
 require 'cookstyle'
 
-desc 'Runs ChefSpec tests'
-task :chefspec do
-  sh 'rspec'
-end
-
 desc 'Runs foodcritic test'
 task :foodcritic do
   FoodCritic::Rake::LintTask.new
@@ -65,4 +60,4 @@ namespace :integration do
   end
 end
 
-task default: [:foodcritic, :unit, :chefspec, :cookstyle]
+task default: [:foodcritic, :unit, :cookstyle]
