@@ -1,7 +1,7 @@
 
 include_recipe 'alfresco-utils::java'
 
-install_name = node['appserver']['aps']['installname']
+install_name = node['appserver']['installname']
 service_name = node['tomcat']['service']
 name = [install_name, service_name].join('-')
 
