@@ -18,7 +18,7 @@ end
 desc 'Runs rspec tests in test/unit folder'
 task :unit do
   RSpec::Core::RakeTask.new(:unit) do |t|
-    t.pattern = 'test/unit/**/*_spec.rb'
+    t.pattern = Dir['spec/*/**/*_spec.rb'].reject { |f| f['/api/v1'] || f['/integration'] }
   end
 end
 
