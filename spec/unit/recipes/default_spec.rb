@@ -6,19 +6,21 @@
 
 require 'spec_helper'
 
-describe 'aps-appserver::default' do
-  context 'When all attributes are default, on an Ubuntu 16.04' do
-    let(:chef_run) do
-      runner = ChefSpec::ServerRunner.new
-      runner.converge(described_recipe)
-    end
+RSpec.describe 'aps-appserver::default' do
+  let(:chef_run) do
+    ChefSpec::SoloRunner.new(
+      platform: 'centos',
+      version: '7.2.1511',
+      file_cache_path: '/var/chef/cache'
+    ) do |node|
+    end.converge(described_recipe)
+  end
 
-    it 'converges successfully' do
-      expect { chef_run }.to_not raise_error
-    end
+  it 'converges successfully' do
+    expect { chef_run }.to_not raise_error
+  end
 
-    it 'includes the `tomcat` recipe' do
-      expect(chef_run).to include_recipe('aps-appserver::tomcat')
-    end
+  it 'includes the `tomcat` recipe' do
+    expect(chef_run).to include_recipe('aps-appserver::tomcat')
   end
 end
