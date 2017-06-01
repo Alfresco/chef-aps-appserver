@@ -37,7 +37,7 @@ other specific Tomcat Attributes
 
 | Key | Type | Description | Default |
 |-----|------|-------------|---------|
-| default['tomcat']['tar']['url'] | String | [`installation_url`]('http://archive.apache.org/dist/tomcat/tomcat-8/v8.0.36/bin/apache-tomcat-8.0.36.tar.gz') | nil
+| default['tomcat']['tar']['url'] | String | [`installation_url`](http://archive.apache.org/dist/tomcat/tomcat-8/v8.0.36/bin/apache-tomcat-8.0.36.tar.gz) | nil
 | default['tomcat']['tar']['version'] | String | Tomcat version | 8.0.36
 | default['tomcat']['service'] | String | Tomcat service name | activiti
 
