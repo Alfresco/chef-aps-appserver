@@ -5,10 +5,6 @@ install_name = node['appserver']['aps']['installname']
 service_name = node['tomcat']['service']
 name = [install_name, service_name].join('-')
 
-# umask = node['tomcat']['umask']
-# setenv_options = ["export JAVA_OPTS=\"#{node['tomcat']['java_options'].map { |_k, v| v }.join(' ')}\""]
-# setenv_options.push("umask #{umask}") unless umask.to_s.empty?
-
 apache_tomcat install_name do
   url node['tomcat']['tar']['url']
   checksum node['tomcat']['tar']['checksum']
