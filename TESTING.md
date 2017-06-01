@@ -77,7 +77,7 @@ Where
 
 Examples:
 
-To run tomcat-multi suite with Vagrant using the Kitchen _test_ command
+To run tomcat suite with Vagrant using the Kitchen _test_ command
 ```shell
 chef exec bundle exec rake 'integration:vagrant[default,test]'
 ```

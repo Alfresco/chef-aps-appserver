@@ -1,5 +1,5 @@
 # chef-aps-appserver cookbook
-[![Build Status](https://travis-ci.org/Alfresco/chef-aps-appserver.svg)](https://travis-ci.org/Alfresco/chef-aps-appserver?branch=develop)
+[![Build Status](https://travis-ci.org/Alfresco/chef-aps-appserver.svg)](https://travis-ci.com/Alfresco/chef-aps-appserver?branch=master)
 
 This cookbook will install the Application Server part of the Alfresco Process Services, [chef-aps](https://github.com/alfresco/chef-aps).
 The default choice is Tomcat, but it can be expanded to use your own application server.
@@ -32,6 +32,8 @@ The following platforms are supported and tested with Test Kitchen:
 | default['appserver']['installname'] | String | installname of choice  | tomcat  |
 | default['appserver']['username'] | String   | Appserver user |  tomcat |
 | default['appserver']['group']  | String   | Appserver group |  tomcat |
+| default['appserver']['username'] | String   | Appserver user |  tomcat |
+| default['appserver']['home']  | String   | catalina_home |  /usr/share/tomcat |
 
 other specific Tomcat Attributes
 
