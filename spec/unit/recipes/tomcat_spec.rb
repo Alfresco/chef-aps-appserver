@@ -1,10 +1,14 @@
 require 'spec_helper'
 require 'chefspec'
 
-describe 'aps-appserver::tomcat' do
+RSpec.describe 'aps-appserver::default' do
   let(:chef_run) do
-    runner = ChefSpec::ServerRunner.new
-    runner.converge(described_recipe)
+    ChefSpec::SoloRunner.new(
+      platform: 'centos',
+      version: '7.2.1511',
+      file_cache_path: '/var/chef/cache'
+    ) do |node|
+    end.converge(described_recipe)
   end
 
   it 'converges successfully' do
