@@ -65,4 +65,4 @@ namespace :integration do
   end
 end
 
-task default: [:foodcritic, :unit, :chefspec, :cookstyle]
+task default: [:foodcritic, :chefspec, :cookstyle]
