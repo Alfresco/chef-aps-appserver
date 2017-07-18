@@ -1,6 +1,8 @@
 
 include_recipe 'alfresco-utils::java'
 
+setenv_options = ["export JAVA_OPTS=\"#{node['tomcat']['java_options'].map { |_k, v| v }.join(' ')}\""]
+
 install_name = node['appserver']['installname']
 service_name = node['tomcat']['service']
 name = [install_name, service_name].join('-')
@@ -16,7 +18,18 @@ apache_tomcat install_name do
   apache_tomcat_instance service_name do
     single_instance true
     apache_tomcat_service service_name
+    setenv_options do
+      config(setenv_options)
+    end
   end
+end
+
+template "#{node['appserver']['home']}/conf/log4j.properties" do
+  source 'log4j.properties.erb'
+  owner 'tomcat'
+  group 'tomcat'
+  mode 00750
+  variables properties: node['appserver']['log4j-properties']
 end
 
 service name do
