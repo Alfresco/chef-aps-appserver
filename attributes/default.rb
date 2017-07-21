@@ -6,4 +6,4 @@ default['appserver']['group'] = 'tomcat'
 default['appserver']['home'] = '/usr/share/tomcat'
 
 default['appserver']['jmxremote_databag'] = 'credentials'
-default['appserver']['jmxremote_databag_items'] = %w(systemsmonitor systemscontrol)
+default['appserver']['jmxremote_databag_items'] = %w(jmx_systemsmonitor jmx_systemscontrol)
