@@ -23,4 +23,4 @@ supports 'centos', '>= 7.0'
 
 depends 'apache_tomcat'
 depends 'poise-derived', '~> 1.0.0'
-depends 'alfresco-utils', '~> 1.1.0'
+depends 'alfresco-utils', '~> 1.0'
