@@ -23,4 +23,12 @@ suites:
         - name: chef-aps-inspec-tomcat
           git: https://github.com/Alfresco/chef-aps-inspec-tomcat
         - path: test/inspec/
-    attributes:
+    attributes: {
+      "tomcat": {
+        "custom_server": true,
+        "proxy_port": 443,
+        "proxy_name": "test.alfresco.com",
+        "scheme": "https",
+        "ssl_enabled": true
+      }
+    }

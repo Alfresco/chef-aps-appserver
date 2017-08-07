@@ -40,10 +40,10 @@
                    connectionTimeout="20000"
                    redirectPort="8443"
                    <% if node['tomcat']['proxy_port'] -%>
-		               proxyPort="<%= @proxy_port %>"
+		           proxyPort="<%= @proxy_port %>"
                    <% end -%>
                    <% if node['tomcat']['proxy_name'] -%>
-		               proxyName="<%= @proxy_name %>"
+		           proxyName="<%= @proxy_name %>"
                    <% end -%>
                    <% if node['tomcat']['scheme'] -%>
                    scheme="<%= @http_scheme %>"
