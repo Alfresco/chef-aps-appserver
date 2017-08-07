@@ -24,6 +24,8 @@ apache_tomcat install_name do
   end
 
   apache_tomcat_config 'server' do
+    source node['tomcat']['server_template_source']
+    cookbook node['tomcat']['server_template_cookbook']
     options do
       proxy_port node['tomcat']['proxy_port']
       proxy_name node['tomcat']['proxy_name']

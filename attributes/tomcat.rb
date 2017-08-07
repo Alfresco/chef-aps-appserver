@@ -20,3 +20,5 @@ default['tomcat']['scheme'] = nil
 default['tomcat']['shutdown'] = 'CHANGEME'
 default['tomcat']['shutdown_port'] = -1
 default['tomcat']['custom_server'] = false
+default['tomcat']['server_template_source'] = 'tomcat/server.xml.erb'
+default['tomcat']['server_template_cookbook'] = 'aps-appserver'
