@@ -17,7 +17,7 @@
   See the License for the specific language governing permissions and
   limitations under the License.
 -->
-<Server port="8005" shutdown="SHUTDOWN" >
+<Server port="<%= @shutdown_port %>" shutdown="<%= node['tomcat']['shutdown'] %>" >
     <Listener className="org.apache.catalina.startup.VersionLoggerListener" />
     <Listener className="org.apache.catalina.core.AprLifecycleListener" SSLEngine="on" />
     <Listener className="org.apache.catalina.core.JreMemoryLeakPreventionListener" />

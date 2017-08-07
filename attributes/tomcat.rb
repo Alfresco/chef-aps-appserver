@@ -17,3 +17,6 @@ default['tomcat']['proxy_port'] = nil
 default['tomcat']['proxy_name'] = nil
 default['tomcat']['ssl_enabled'] = false
 default['tomcat']['scheme'] = nil
+default['tomcat']['shutdown'] = 'CHANGEME'
+default['tomcat']['shutdown_port'] = -1
+default['tomcat']['custom_server'] = false
