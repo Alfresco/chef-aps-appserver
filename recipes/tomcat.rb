@@ -22,6 +22,14 @@ apache_tomcat install_name do
       config(setenv_options)
     end
   end
+
+  apache_tomcat_config 'server' do
+    options do
+      proxy_port node['tomcat']['proxy_port']
+      proxy_name node['tomcat']['proxy_name']
+      http_scheme node['tomcat']['scheme']
+    end
+  end
 end
 
 jmxremote_databag = node['appserver']['jmxremote_databag']

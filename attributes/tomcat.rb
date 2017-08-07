@@ -12,3 +12,8 @@ jmxremote_access_fullpath = lazy { "#{node['tomcat']['jmxremote_path']}/#{node['
 jmxremote_password_fullpath = lazy { "#{node['tomcat']['jmxremote_path']}/#{node['tomcat']['jmxremote_password_filename']}" }
 
 default['tomcat']['java_options']['jmx'] = lazy { "-Dcom.sun.management.jmxremote.port=#{node['tomcat']['jmxremote_port']} -Dcom.sun.management.jmxremote=true -Dcom.sun.management.jmxremote.authenticate=true -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.access.file=#{jmxremote_access_fullpath} -Dcom.sun.management.jmxremote.password.file=#{jmxremote_password_fullpath} -Dcom.sun.management.jmxremote.local.only=false" }
+
+default['tomcat']['proxy_port'] = nil 
+default['tomcat']['proxy_name'] = nil
+default['tomcat']['ssl_enabled'] = false
+default['tomcat']['scheme'] = nil
