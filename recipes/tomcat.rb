@@ -21,6 +21,17 @@ apache_tomcat install_name do
     setenv_options do
       config(setenv_options)
     end
+    apache_tomcat_config 'server' do
+      source node['tomcat']['server_template_source']
+      cookbook node['tomcat']['server_template_cookbook']
+      options do
+        proxy_port node['tomcat']['proxy_port']
+        proxy_name node['tomcat']['proxy_name']
+        http_scheme node['tomcat']['scheme']
+        shutdown_port node['tomcat']['shutdown_port']
+      end
+      only_if { node['tomcat']['custom_server'] }
+    end
   end
 end
 
